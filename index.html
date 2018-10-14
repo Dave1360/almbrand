@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Alm. Brand</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+
+
+        .ligelinje {
+            width: 80px;
+            background-color: #00b9ea;
+            height: 2px;
+            border: none;
+            margin: 1.5rem auto 1.4rem;
+        }
+         /*Velkommen til Alm. Brand starter*/
+        #velkommen {
+            background-color: #d9effa;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #velkommen h1 {
+            text-align: center;
+            color: #032846;
+            max-width: 200px;
+            margin: auto;
+            /*            font-family: ; Ændre font*/
+        }
+
+        #velkommen p {
+            text-align: center;
+            line-height: 1.6;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        #velkommen a {
+            color: #00b9ea;
+            text-decoration: none;
+        }
+
+        #velkommen a:hover {
+            text-decoration: underline;
+        }
+
+        /*Velkommen til Alm. Brand Slutter*/
+
+        /*Vi giver økonomisk rådgivning starter*/
+
+        #koncept {
+
+        }
+
+        #koncept h2 {
+            text-align: center;
+        }
+
+        #koncept p {
+            text-align: center;
+            font-family: 'Work Sans', sans-serif;
+            line-height: 1.6;
+            margin: 10px;
+        }
+
+        #koncept .kontaktos {
+            border: 6px solid #a2daf4;
+            color: #fff;
+            background-color: #00b9ea;
+            border-radius: 2em;
+            height: 60px;
+            min-width: 150px;
+            font-size: 1.1em;
+            cursor: pointer;
+            font-family: 'Work Sans', sans-serif;
+            margin-top: 15px;
+        }
+
+        #koncept button:hover {
+            background-color: #032846;
+            border: 6px solid #00b9ea;
+        }
+         /*Vi giver økonomisk rådgivning Slutter*/
+
+        /* Lån penge med omtanke Starter*/
+
+        #lånpenge {
+             background-color: #d9effa;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #lånpenge h2 {
+            text-align: center;
+        }
+
+        #lånpenge p {
+             font-family: 'Work Sans', sans-serif;
+        }
+
+        /* Lån penge Slider Starter*/
+
+        .slidecontainer {
+    width: 100%;
+}
+
+    .slider {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 15px;
+    border-radius: 5px;
+    background: #032846;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+    .slider:hover {
+    opacity: 1;
+
+}
+
+    .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #00b9ea;
+    cursor: pointer;
+}
+
+        /*Lån penge slider slutter*/
+        /*Lån penge med omtanke slutter*/
+
+        /*Footer starter*/
+        footer {
+            background-color: #032846;
+             font-family: 'Work Sans', sans-serif;
+            color: #fff;
+            padding: 10px;
+        }
+
+
+        /*Footer Slutter */
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="alm.brand_logo.jpg" alt="Alm. Brand Logo">
+        </div>
+    </header>
+    <main>
+        <div id="velkommen">
+            <h1>Velkommen til Alm. Brand</h1>
+            <hr class="ligelinje">
+            <p>
+                Det tidligere Saxo Privatbank er nu en del af Alm. Brand. Sammen vil vi kunne tilbyde dig den service og kompetente rådgivning, du kender i dag, samtidig med at du får en række nye attraktive fordele. Indtil vi er kommet helt på plads, er dette website et midlertidigt parallel univers til <a href="https://www.almbrand.dk/">Alm. Brands normale website.</a>
+            </p>
+        </div>
+        <div id="koncept">
+            <h2>Vi giver økonomisk rådgivning</h2>
+            <hr class="ligelinje">
+            <p>
+                Hos os kan du få rådgivning om alt fra din daglige økonomi til lån, opsparing og investering.
+            </p>
+            <p>
+                Vi er ikke bange for at gøre tingene anderledes, når vi sammen med dig finder frem til de bedste løsninger. Med vores unikke tilgang til personlig rådgivning sørger vi for, at du får mest muligt ud af alle aspekter af din økonomi.
+            </p>
+            <p>
+                Du har allerede styr på din økonomi. Til gengæld kan du forvente, at vi gør alt, hvad vi kan for, at du får mest muligt ud af den.
+
+            </p>
+            <p>
+                <button class="kontaktos">Kontakt os</button>
+            </p>
+        </div>
+        <div id="lånpenge">
+            <h2>Lån penge med omtanke</h2>
+            <hr class="ligelinje">
+            <p><b>Lånebeløb: <span class="value">5000 DKK</span></b></p>
+            <div class="slidecontainer">
+                <input type="range" min="5000" max="100000" value="5000" step="500" class="slider" id="myRanger">
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <hr>
+        <p>Facebook</p>
+        <p>Instagram</p>
+        <p>Twitter</p>
+    </footer>
+
+    <script>
+      document.querySelector(".slider").addEventListener("input", showValue);
+
+        function showValue() {
+
+            let svar = parseInt(this.value);
+
+            document.querySelector(".value").textContent = svar + " DKK";
+
+        }
+    </script>
+</body>
+</html>
