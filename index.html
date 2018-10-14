@@ -54,9 +54,7 @@
 
         /*Vi giver økonomisk rådgivning starter*/
 
-        #koncept {
 
-        }
 
         #koncept h2 {
             text-align: center;
@@ -110,7 +108,17 @@
     width: 100%;
 }
 
-    .slider {
+    .DKK_slider {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 15px;
+    border-radius: 5px;
+    background: #032846;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+    .mdr_slider {
     -webkit-appearance: none;
     width: 50%;
     height: 15px;
@@ -121,12 +129,16 @@
     transition: opacity .2s;
 }
 
-    .slider:hover {
-    opacity: 1;
-
+    .DKK_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #00b9ea;
+    cursor: pointer;
 }
-
-    .slider::-webkit-slider-thumb {
+            .mdr_slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 25px;
@@ -137,7 +149,119 @@
 }
 
         /*Lån penge slider slutter*/
+
+            #lånpenge .lån_nu {
+            border: 6px solid #a2daf4;
+            color: #fff;
+            background-color: #00b9ea;
+            border-radius: 2em;
+            height: 60px;
+            min-width: 150px;
+            font-size: 1.1em;
+            cursor: pointer;
+            font-family: 'Work Sans', sans-serif;
+            margin-top: 15px;
+        }
+
+        #lånpenge .lån_penge_nu_p {
+            text-align: center;
+        }
+        #lånpenge button:hover {
+            background-color: #032846;
+            border: 6px solid #00b9ea;
+        }
+
         /*Lån penge med omtanke slutter*/
+
+        /* PAS PÅ STARTER */
+
+        #pas_på h2 {
+            text-align: center;
+        }
+
+        #pas_på p {
+            font-family: 'Work Sans', sans-serif;
+            text-align: center;
+            margin: 10px;
+            line-height: 1.6em;
+        }
+        /* PAS PÅ SLUTTER */
+        /*Modal VIEW STARTER*/
+
+        #modal {
+            background-color: rgba(3, 40, 70, 0.87);
+            opacity: 0;
+            width: 100vw;
+            height: 160vw;
+            top: 5vw;
+            position: fixed;
+            color: #fff;
+            padding-top: 10vw;
+            display: none;
+                text-align: center;
+        }
+
+        #modal.vis {
+           display: block;
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+        .modal_knap {
+             border: 6px solid #a2daf4;
+            color: #fff;
+            background-color: #00b9ea;
+            border-radius: 2em;
+            height: 60px;
+            min-width: 150px;
+            font-size: 1.1em;
+            cursor: pointer;
+            font-family: 'Work Sans', sans-serif;
+            margin-top: 15px;
+
+        }
+
+        .modal_knap:hover {
+             background-color: #032846;
+            border: 6px solid #00b9ea;
+        }
+
+        .modal_input {
+            border: none;
+            width: 100vw;
+            background-color: transparent;
+            border-bottom-style: solid;
+            border-bottom-width: 2px;
+            border-bottom-color: white;
+            font-size: 1.5em;
+            font-family: 'Work Sans', sans-serif;
+            margin: 10px;
+        }
+
+        #modal h3 {
+            text-align: left;
+            margin-left: 10px;
+            margin-bottom: 1vw;
+        }
+
+        #modal .modal_kontakt_mig {
+              border: 6px solid #a2daf4;
+            color: #fff;
+            background-color: #00b9ea;
+            border-radius: 2em;
+            height: 60px;
+            min-width: 150px;
+            font-size: 1.1em;
+            cursor: pointer;
+            font-family: 'Work Sans', sans-serif;
+            margin-top: 15px;
+        }
+
+        #modal .modal_kontakt_mig:hover {
+            background-color: #032846;
+            border: 6px solid #00b9ea;
+        }
+        /*Modal VIEW SLUTTER*/
 
         /*Footer starter*/
         footer {
@@ -189,10 +313,45 @@
             <hr class="ligelinje">
             <p><b>Lånebeløb: <span class="value">5000 DKK</span></b></p>
             <div class="slidecontainer">
-                <input type="range" min="5000" max="100000" value="5000" step="500" class="slider" id="myRanger">
+                <input type="range" min="5000" max="100000" value="5000" step="500" class="DKK_slider" id="myRanger">
             </div>
-
+            <p><b>Løbetid: <span class="løbetid">12 mdr.</span></b></p>
+            <div class="slidecontainer">
+                <input type="range" min="12" max="36" value="12" step="1" class="mdr_slider" id="myRanger">
+            </div>
+            <p class="lån_penge_nu_p">
+                <button class="lån_nu">Lån nu</button>
+            </p>
         </div>
+        <div id="pas_på">
+            <h2>Pas på de hurtige &amp; dyre forbrugslån</h2>
+            <hr class="ligelinje">
+
+            <p>Når du er fyldt 18 år, får du mulighed for at låne penge, og faktisk har halvdelen af alle danskere mellem 18 og 29 år et lån*. Du kan bl.a. låne penge i banken eller tage et kviklån via nettet eller mobiltelefonen. Men vær opmærksom på hvor meget du i alt skal betale tilbage i kroner/øre - og på ÅOP på lånet.</p>
+
+            <p> ÅOP står for Årlige Omkostninger i Procent, og ÅOP fortæller med et enkelt tal, hvor dyrt lånet er. Ved at sammenligne ÅOP for forskellige lån på samme størrelse og med samme løbetid, kan du på den måde finde det billigste lån. Det lån, der har den laveste ÅOP er billigst.</p>
+
+            <p>Typisk har kviklån en høj ÅOP, derfor bør du overveje at vælge et banklån.</p>
+
+            <p>(Kilde: Finans Danmark, Unge, gæld & opsparing, 2018*)</p>
+        </div>
+        <!-- Modal VIEW STARTER -->
+        <div id="modal">
+            <button class="modal_knap">Close</button>
+            <div class="modal_content">
+                <h2>Lån penge med omtanke</h2>
+                <h3>Navn</h3>
+                <input type="text" placeholder="Indtast dit navn" class="modal_input">
+                <h3>Mail</h3>
+                <input type="text" placeholder="Indtast dit mail" class="modal_input">
+                <h3>Postnummer &amp; by</h3>
+                <input type="text" placeholder="Indtast dit postnummer & by" class="modal_input">
+                <h3>Telefon</h3>
+                <input type="text" placeholder="Indtast dit telefonnummer" class="modal_input">
+            </div>
+            <button class="modal_kontakt_mig">Kontakt mig</button>
+        </div>
+        <!-- Modal VIEW SLUTTER -->
     </main>
     <footer>
         <hr>
@@ -202,14 +361,39 @@
     </footer>
 
     <script>
-      document.querySelector(".slider").addEventListener("input", showValue);
+        let modal = document.querySelector("#modal");
+
+        document.querySelector(".DKK_slider").addEventListener("input", showValue);
 
         function showValue() {
 
-            let svar = parseInt(this.value);
+            let beløb = parseInt(this.value);
 
-            document.querySelector(".value").textContent = svar + " DKK";
+            document.querySelector(".value").textContent = beløb + " DKK";
 
+        }
+        document.querySelector(".mdr_slider").addEventListener("input", showLøbetid);
+
+        function showLøbetid() {
+
+            let månedlig = parseInt(this.value);
+
+            document.querySelector(".løbetid").textContent = månedlig + " mdr.";
+
+        }
+
+
+
+        document.querySelector(".lån_nu").addEventListener("click", visModal);
+
+        //functionen visModal
+        function visModal() {
+            modal.classList.add("vis");
+            modal.querySelector(".modal_knap").addEventListener("click", skjulModal);
+        }
+
+        function skjulModal() {
+            modal.classList.remove("vis");
         }
     </script>
 </body>
