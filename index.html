@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="da">
+
 <head>
     <meta charset="UTF-8">
     <title>Alm. Brand</title>
@@ -313,11 +314,14 @@
             <hr class="ligelinje">
             <p><b>Lånebeløb: <span class="value">5000 DKK</span></b></p>
             <div class="slidecontainer">
-                <input type="range" min="5000" max="100000" value="5000" step="500" class="DKK_slider" id="myRanger">
+                <input type="range" min="5000" max="100000" value="5000" step="500" class="DKK_slider" id="myRanger1">
             </div>
             <p><b>Løbetid: <span class="løbetid">12 mdr.</span></b></p>
             <div class="slidecontainer">
-                <input type="range" min="12" max="36" value="12" step="1" class="mdr_slider" id="myRanger">
+                <input type="range" min="12" max="36" value="12" step="1" class="mdr_slider" id="myRanger2">
+            </div>
+            <div class="tilbagebetaling">
+                <p><b>Tilbagebetaling: <span class="payBack"></span></b></p>
             </div>
             <p class="lån_penge_nu_p">
                 <button class="lån_nu">Lån nu</button>
@@ -363,25 +367,62 @@
     <script>
         let modal = document.querySelector("#modal");
 
+
+
+        /*        let laaneBeloeb = document.querySelector(".DKK_slider");
+                let laaneTid = document.querySelector(".mdr_slider");
+
+                let percent = 0.07;
+
+                document.querySelector(".DKK_slider").addEventListener("input", calculation);
+
+                document.querySelector(".mdr_slider").addEventListener("input", calculation);
+
+
+                function calculation() {
+
+                    let result = laaneBeloeb.value;
+
+                    document.querySelector(".value").textContent = laaneBeloeb.value + " DKK";
+
+
+                    document.querySelector(".løbetid").textContent = laaneTid.value + " mdr.";
+
+                    document.querySelector(".payBack").textContent = laaneBeloeb.value;
+
+
+                }
+                */
+
+
+        let månedlig;
+        let beløb;
+        var percent = 0.07;
+
+
         document.querySelector(".DKK_slider").addEventListener("input", showValue);
+        document.querySelector(".mdr_slider").addEventListener("input", showValue);
 
         function showValue() {
 
-            let beløb = parseInt(this.value);
+            beløb = document.querySelector("#myRanger1");
 
-            document.querySelector(".value").textContent = beløb + " DKK";
+            document.querySelector(".value").textContent = beløb.value + " DKK";
+
+            console.log(beløb.value);
+
+            månedlig = document.querySelector("#myRanger2")
+
+            document.querySelector(".løbetid").textContent = månedlig.value + " mdr.";
+
+            console.log(månedlig.value);
+
+            var x = parseInt(beløb.value);
+            let result = (beløb.value * percent) / (1 - Math.pow(1 + percent, -månedlig.value));
+            console.log(result);
+            document.querySelector(".payBack").textContent = Math.round(result) + x + " DKK";
 
         }
-        document.querySelector(".mdr_slider").addEventListener("input", showLøbetid);
-
-        function showLøbetid() {
-
-            let månedlig = parseInt(this.value);
-
-            document.querySelector(".løbetid").textContent = månedlig + " mdr.";
-
-        }
-
 
 
         document.querySelector(".lån_nu").addEventListener("click", visModal);
@@ -395,6 +436,8 @@
         function skjulModal() {
             modal.classList.remove("vis");
         }
+
     </script>
 </body>
+
 </html>
