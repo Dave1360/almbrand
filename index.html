@@ -14,14 +14,24 @@
 
         }
 
+        h1,h2,h3 {
+             font-family: 'Work Sans', sans-serif;
+        }
+
+
+        h1 {
+            font-size: 5.3vw;
+        }
+
+
         nav {
             background-color: rgba(255, 255, 255, 0.95);
             width: 100%;
             height: 50px;
             position: fixed;
             top: 0;
-            display: flex;
-            justify-content: space-around;
+           display: flex;
+
         }
 
         #logo img {
@@ -45,6 +55,7 @@
             text-transform: uppercase;
             font-size: 2.5vw;
             font-weight: bold;
+
 
         }
 
@@ -255,6 +266,11 @@
             line-height: 1.6em;
         }
         /* PAS PÅ SLUTTER */
+
+        #search {
+            display: none;
+        }
+
         /*Modal VIEW STARTER*/
 
         #modal {
@@ -446,14 +462,49 @@
         /*Footer Slutter */
 
 
-        @media only screen and (min-width: 768px) {
+        .svg_container {
+            display: flex;
+            justify-content: center;
+        }
+        .piechart {
+            width: 200px;
+            height: 200px;
+            background: #a2daf4;
+            border-radius: 50%;
+            transform: rotate(-90deg);
+           display: block;
+
+        }
+
+        .pie{
+            fill: #d9effa;
+            stroke: #032846;
+            stroke-width: 40;
+            stroke-dasharray: 0 628;
+            animation: animer 3s linear forwards;
+            stroke-linecap: round;
+        }
+
+        .text_i_cirkel {
+           transform: rotate(90deg);
+        }
+
+        @keyframes animer {
+            to {
+                stroke-dasharray: 94 628;
+            }
+    }
+
+
+        @media only screen and (min-width: 1000px) {
 
 
         #velkommen {
             max-width: 600px;
             padding: 10px;
             margin: auto;
-            margin-top: 50px;
+            margin-top: 155px;
+
         }
 
         #koncept {
@@ -502,41 +553,54 @@
                 width: 30vw;
             }
 
-              nav {
-            background-color: rgba(255, 255, 255, 0.95);
-            width: 100%;
-            height: 50px;
-            position: fixed;
-            top: 0;
-            display: flex;
-            justify-content: space-around;
+        nav {
+            max-width: 600px;
+            height: 205px;
+            margin: auto;
+            position: absolute;
         }
 
         #logo img {
-            width: 40px;
-            height: 40px;
-            margin-left: 10px;
+            width: 150px;
+            height: 150px;
+            margin-left: 20vw;
             margin-top: 5px;
         }
 
-
-        .links_i_nav {
-           text-align: center;
-            margin: auto;
-        }
-
         .links_i_nav a {
-            text-decoration: none;
-            color: #00b9ea;
-             font-family: 'Work Sans', sans-serif;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-size: 2.5vw;
-            font-weight: bold;
+            font-size: 1vw;
+            padding-left: 125px;
 
         }
+            .links_i_nav a:hover {
+                text-decoration: underline;
+            }
 
+            #search {
+                margin: auto;
+                margin-left: 5vw;
+            }
+
+            .search_place {
+                border: none;
+                background-color: transparent;
+                border-bottom: 1px solid #00b9ea;
+                font-size: 1vw;
+                font-family: 'Work Sans', sans-serif;
+            }
+
+            h1 {
+            font-size: 1.4vw;
+        }
+
+             #search {
+            display: block;
+        }
+            .svg_container {
+                margin-bottom: 20px;
+            }
     }
+
 
 
     </style>
@@ -557,6 +621,9 @@
             <div id="kampagnevideo" class="links_i_nav">
                 <a href="#kampagnevideo">Kampagnevideo</a>
             </div>
+            <div id="search">
+                <input type="search" placeholder="Indtast søgning" class="search_place">
+            </div>
         </nav>
     </header>
     <main>
@@ -569,7 +636,6 @@
                 Det tidligere Saxo Privatbank er nu en del af Alm. Brand. Sammen vil vi kunne tilbyde dig den service og kompetente rådgivning, du kender i dag, samtidig med at du får en række nye attraktive fordele. Indtil vi er kommet helt på plads, er dette website et midlertidigt parallel univers til <a href="https://www.almbrand.dk/">Alm. Brands normale website.</a>
             </p>
         </div>
-
 
         <div id="koncept">
             <h2>Vi giver økonomisk rådgivning</h2>
@@ -612,9 +678,18 @@
                 <li>Mulighed for at hæve og indsætte kontanter uden gebyr i andre bankers automater.</li>
                 <li>Netbank og Mobilbank uden gebyr.</li>
                 <li>Mulighed for at oprette en kassekredit uden etableringsgebyr.</li>
-                <li>En gebyrfri hverdag - f.eks. kan du overføre og betale indbetalingskort via Netbank uden beregning. Du kan samtidig hæve og indsætte kontanter i vores automater uden gebyr.</li>
-                <li>Mulighed for at hæve euro i vores automater, når du skal ud at rejse. Du kan også købe og sælge valuta i de filialer, hvor vi har en medarbejderbetjent kasse. Det får du selvfølgelig også uden at skulle betale gebyr.</li>
             </ul>
+              <h2>Eksempel på forbrugslån</h2>
+              <hr class="ligelinje">
+               <p>Eksempel:
+Forbrugslån med et samlet kreditbeløb på 25.000 kr., med en løbetid på 4 år, og hvor der ikke stilles sikkerhed. Etableringsomkostningen er 1.000 kr. og hovedstolen 26.000 kr. ÅOP er 9,4%, under forudsætning af at lånet afdrages som et annuitetslån med 622,12 kr. pr. måned. Det samlede beløb som skal betales er 29.860,72 kr., hvoraf omkostningerne udgør 3.860,72 kr. Omkostningerne er derfor kun 15% af kreditbeløbet.</p>
+   <div class="svg_container">
+    <svg class="piechart">
+        <circle r="100" cx="100" cy="100" class="pie"/>
+        <text class="text_i_cirkel" x="50%" y="-50%" align-baseline="middle" text-anchor="middle">15%</text>
+    </svg>
+    </div>
+
         </div>
 
         <div id="lånpenge">
@@ -627,7 +702,7 @@
             </div>
             <p><b>Løbetid: <span class="løbetid">12 mdr.</span></b></p>
             <div class="slidecontainer">
-                <input type="range" min="12" max="36" value="12" step="1" class="mdr_slider" id="myRanger2">
+                <input type="range" min="6" max="60" value="12" step="1" class="mdr_slider" id="myRanger2">
             </div>
             <div class="tilbagebetaling">
                 <p><b>Låne omkostning: <span class="tillæg">630 DKK</span></b></p>
