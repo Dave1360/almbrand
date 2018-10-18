@@ -30,34 +30,48 @@
             height: 50px;
             position: fixed;
             top: 0;
-           display: flex;
-
         }
 
-        #logo img {
-            width: 40px;
-            height: 40px;
+        .nav_container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo_container img {
+            max-width: 40px;
+            margin: 6px 0;
             margin-left: 10px;
-            margin-top: 5px;
         }
 
-
-        .links_i_nav {
-           text-align: center;
-            margin: auto;
-        }
-
-        .links_i_nav a {
-            text-decoration: none;
+        nav a {
             color: #00b9ea;
-             font-family: 'Work Sans', sans-serif;
+            text-decoration: none;
+            padding: 15px;
+            font-family: 'Work Sans', sans-serif;
             cursor: pointer;
-            text-transform: uppercase;
-            font-size: 2.5vw;
-            font-weight: bold;
-
-
         }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+  /*              footer {
+            background-color: #032846;
+            padding: 10px;
+        }
+
+        #footer_container {
+            display: flex;
+            justify-content: center;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Work Sans', sans-serif;
+            cursor: pointer;
+            padding: 10px;
+        }*/
 
         .ligelinje {
             width: 80px;
@@ -68,7 +82,7 @@
         }
          /*Velkommen til Alm. Brand starter*/
         #velkommen {
-            background-color: #d9effa;
+            background-color: #032846;
             padding: 10px;
             margin: 50px 10px 10px 10px;
 
@@ -76,7 +90,7 @@
 
         #velkommen h1 {
             text-align: center;
-            color: #032846;
+            color: white;
             max-width: 200px;
             margin: auto;
 
@@ -86,6 +100,7 @@
             margin: 10px;
             line-height: 1.6;
             font-family: 'Work Sans', sans-serif;
+            color: white;
         }
 
         #velkommen a {
@@ -461,43 +476,34 @@
 
         /*Footer Slutter */
 
-
-        .svg_container {
-            display: flex;
-            justify-content: center;
+        @media only screen and (min-width: 600px) {
+            nav {
+            height: 5vw;
+            position: absolute;
         }
-        .piechart {
-            width: 200px;
-            height: 200px;
-            background: #a2daf4;
-            border-radius: 50%;
-            transform: rotate(-90deg);
-           display: block;
-
-        }
-
-        .pie{
-            fill: #d9effa;
-            stroke: #032846;
-            stroke-width: 40;
-            stroke-dasharray: 0 628;
-            animation: animer 3s linear forwards;
-            stroke-linecap: round;
-        }
-
-        .text_i_cirkel {
-           transform: rotate(90deg);
-        }
-
-        @keyframes animer {
-            to {
-                stroke-dasharray: 94 628;
-            }
     }
-
 
         @media only screen and (min-width: 1000px) {
 
+            .nav_container {
+                max-width: 600px;
+               margin: auto;
+            }
+
+        .logo_container img {
+            max-width: 150px;
+        }
+
+        nav a {
+            color: #00b9ea;
+            text-decoration: none;
+            padding: 40px;
+            font-family: 'Work Sans', sans-serif;
+            cursor: pointer;
+            font-size: 1.5vw;
+            margin: auto;
+
+        }
 
         #velkommen {
             max-width: 600px;
@@ -546,39 +552,15 @@
             margin-right: 631.500px;
             padding-top: 25px;
             height: 45vw;
-            top: 60px;
+                top: 0px;
             }
 
             .situation_modal_input {
                 width: 30vw;
             }
 
-        nav {
-            max-width: 600px;
-            height: 205px;
-            margin: auto;
-            position: absolute;
-        }
-
-        #logo img {
-            width: 150px;
-            height: 150px;
-            margin-left: 20vw;
-            margin-top: 5px;
-        }
-
-        .links_i_nav a {
-            font-size: 1vw;
-            padding-left: 125px;
-
-        }
-            .links_i_nav a:hover {
-                text-decoration: underline;
-            }
-
             #search {
-                margin: auto;
-                margin-left: 5vw;
+             margin: auto;
             }
 
             .search_place {
@@ -596,9 +578,6 @@
              #search {
             display: block;
         }
-            .svg_container {
-                margin-bottom: 20px;
-            }
     }
 
 
@@ -609,21 +588,20 @@
 <body>
     <header>
         <nav>
-            <div id="logo">
-                <img src="alm.brand_logo.jpg" alt="Alm. Brand Logo">
+         <div class="nav_container">
+           <div class="logo_container">
+            <img src="alm.brand_logo.jpg" alt="Alm. Brand Logo">
             </div>
-            <div id="rådgivning" class="links_i_nav">
-                <a href="#koncept">Rådgivning</a>
-            </div>
-            <div id="lån" class="links_i_nav">
-                <a href="#lånpenge">Lån</a>
-            </div>
-            <div id="kampagnevideo" class="links_i_nav">
-                <a href="#kampagnevideo">Kampagnevideo</a>
-            </div>
+
+            <a href="#koncept">Rådgivning</a>
+            <a href="#lånpenge">Lån</a>
+            <a href="#kampagnevideo">Kampagnevideo</a>
             <div id="search">
                 <input type="search" placeholder="Indtast søgning" class="search_place">
             </div>
+    </div>
+
+
         </nav>
     </header>
     <main>
@@ -679,17 +657,6 @@
                 <li>Netbank og Mobilbank uden gebyr.</li>
                 <li>Mulighed for at oprette en kassekredit uden etableringsgebyr.</li>
             </ul>
-              <h2>Eksempel på forbrugslån</h2>
-              <hr class="ligelinje">
-               <p>Eksempel:
-Forbrugslån med et samlet kreditbeløb på 25.000 kr., med en løbetid på 4 år, og hvor der ikke stilles sikkerhed. Etableringsomkostningen er 1.000 kr. og hovedstolen 26.000 kr. ÅOP er 9,4%, under forudsætning af at lånet afdrages som et annuitetslån med 622,12 kr. pr. måned. Det samlede beløb som skal betales er 29.860,72 kr., hvoraf omkostningerne udgør 3.860,72 kr. Omkostningerne er derfor kun 15% af kreditbeløbet.</p>
-   <div class="svg_container">
-    <svg class="piechart">
-        <circle r="100" cx="100" cy="100" class="pie"/>
-        <text class="text_i_cirkel" x="50%" y="-50%" align-baseline="middle" text-anchor="middle">15%</text>
-    </svg>
-    </div>
-
         </div>
 
         <div id="lånpenge">
@@ -700,9 +667,9 @@ Forbrugslån med et samlet kreditbeløb på 25.000 kr., med en løbetid på 4 å
             <div class="slidecontainer">
                 <input type="range" min="5000" max="100000" value="5000" step="500" class="DKK_slider" id="myRanger1">
             </div>
-            <p><b>Løbetid: <span class="løbetid">12 mdr.</span></b></p>
+            <p><b>Løbetid: <span class="løbetid">6 mdr.</span></b></p>
             <div class="slidecontainer">
-                <input type="range" min="6" max="60" value="12" step="1" class="mdr_slider" id="myRanger2">
+                <input type="range" min="6" max="60" value="6" step="1" class="mdr_slider" id="myRanger2">
             </div>
             <div class="tilbagebetaling">
                 <p><b>Låne omkostning: <span class="tillæg">630 DKK</span></b></p>
