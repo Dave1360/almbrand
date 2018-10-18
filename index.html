@@ -455,6 +455,10 @@
 
         /*MODAL VIEW 2 SLUTTER*/
 
+        .video {
+            width: 100%;
+        }
+
         /*Footer starter*/
         footer {
             background-color: #032846;
@@ -484,6 +488,17 @@
     }
 
         @media only screen and (min-width: 1000px) {
+
+            .video_container {
+                display: flex;
+                justify-content: center;
+                margin: 20px;
+            }
+
+            .video {
+                width: 560px;
+                height: 315px;
+            }
 
             .nav_container {
                 max-width: 600px;
@@ -677,6 +692,9 @@
             <p class="lån_penge_nu_p">
                 <button class="lån_nu">Lån nu</button>
             </p>
+        </div>
+    <div class="video_container">
+        <iframe class="video" src="https://www.youtube.com/embed/CqpyJFS44nA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
 
         <!-- Modal VIEW STARTER -->
